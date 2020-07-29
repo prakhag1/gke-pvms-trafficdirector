@@ -120,7 +120,6 @@ spec:
         - name: ISTIO_META_POD_NAME
           valueFrom:
             fieldRef:
-            fieldRef:
               fieldPath: metadata.name
         resources:
           limits:
@@ -278,7 +277,6 @@ spec:
               fieldPath: status.podIP
         - name: ISTIO_META_POD_NAME
           valueFrom:
-            fieldRef:
             fieldRef:
               fieldPath: metadata.name
         resources:
