@@ -55,7 +55,7 @@ spec:
                - key: cloud.google.com/gke-preemptible
                  operator: DoesNotExist
       containers:
-      - image: gcr.io/cloud-solutions-images/pvm-hello-world
+      - image: gcr.io/cloud-solutions-images/hello-world
         imagePullPolicy: Always
         name: hello-app
         ports:
@@ -214,7 +214,7 @@ spec:
                - key: cloud.google.com/gke-preemptible
                  operator: Exists
       containers:
-      - image: gcr.io/cloud-solutions-images/pvm-hello-world
+      - image: gcr.io/cloud-solutions-images/hello-world
         imagePullPolicy: Always
         name: hello-app
         ports:
