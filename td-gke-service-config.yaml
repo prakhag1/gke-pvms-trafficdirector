@@ -1,11 +1,11 @@
 affinityCookieTtlSec: 0
 backends:
 - balancingMode: RATE
-  capacityScaler: 0.0
+  capacityScaler: 0.25
   group: https://www.googleapis.com/compute/v1/projects/[PROJECT_ID]/zones/[ZONE]/networkEndpointGroups/[NEG_NAME_STD]
   maxRatePerEndpoint: 5.0
 - balancingMode: RATE
-  capacityScaler: 1.0
+  capacityScaler: 0.75
   group: https://www.googleapis.com/compute/v1/projects/[PROJECT_ID]/zones/[ZONE]/networkEndpointGroups/[NEG_NAME_PVM]
   maxRatePerEndpoint: 5.0
 connectionDraining:

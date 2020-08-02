@@ -51,6 +51,9 @@ spec:
         - containerPort: 15090
           name: http-envoy-prom
           protocol: TCP
+        - containerPort: 80
+          name: http
+          protocol: TCP
         args:
         - proxy
         - router  # Set as 'router' since proxy is not a sidecar but a gateway
@@ -112,6 +115,13 @@ spec:
         volumeMounts:
         - mountPath: /etc/istio/proxy
           name: istio-envoy
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          failureThreshold: 2
+          initialDelaySeconds: 10
+          periodSeconds: 2
       initContainers:
       - args:
         - -p
